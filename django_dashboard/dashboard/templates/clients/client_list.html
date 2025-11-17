@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Lista de Clientes</title>
@@ -27,7 +28,7 @@
             <tbody>
                 {% for client in object_list %}
                 <tr>
-                    <td>{{ client.name }}</td>
+                    <td>{{ client.first_name }} {{ client.last_name }}</td>
                     <td>{{ client.email }}</td>
                 </tr>
                 {% endfor %}
@@ -41,4 +42,5 @@
         {% endif %}
     </div>
 </body>
+
 </html>

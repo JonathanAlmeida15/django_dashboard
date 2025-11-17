@@ -13,6 +13,6 @@ class ClientListView(ListView):
     
 class ClientCreateView(CreateView):
     model = Client
-    fields = ['name', 'email', 'phone']
+    fields = ['first_name', 'last_name', 'email', 'phone', 'company', 'notes']
     template_name = "dashboard/client_form.html"
     success_url = reverse_lazy('dashboard:client_list')

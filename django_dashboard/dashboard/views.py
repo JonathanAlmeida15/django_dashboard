@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, CreateView
 from django.urls import reverse_lazy
 from clients.models import Client   # <-- SOMENTE ESTE IMPORT
@@ -28,3 +28,6 @@ class ClientDeleteView(DeleteView):
     model = Client
     template_name = "clients/client_confirm_delete.html"
     success_url = reverse_lazy("dashboard:client_list")
+    
+def home(request):
+    return redirect('dashboard:client_list')

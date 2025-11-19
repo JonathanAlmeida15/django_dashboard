@@ -4,7 +4,7 @@ from .views import home, ClientListView, ClientCreateView, ClientUpdateView, Cli
 app_name = 'dashboard'
 
 urlpatterns = [
-    path('', home, name='home'),
+    path('', ClientListView.as_view(), name='client_list'),  # Home será a lista de clientes
     path('clients/', ClientListView.as_view(), name='client_list'),
     path('clients/new/', ClientCreateView.as_view(), name='client_create'),
     path('clients/<int:pk>/edit/', ClientUpdateView.as_view(), name='client_edit'),
